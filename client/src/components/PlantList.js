@@ -6,7 +6,8 @@ export default class PlantList extends Component {
   constructor(){
     super();
     this.state = {
-      plants: []
+      plants: [],
+      search: ''
     }
   }
 
@@ -22,11 +23,24 @@ componentDidMount(){
     })
   })
 }
+
+onChange = e => {
+  this.setState({search : e.target.value})
+}
+
+
+
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
+ 
+
     return (
+      <React.Fragment>
+      <input type="text"
+ placeholder="Search Here" onChange={this.onChange}/>
+      
       <main className="plant-list">
-        {this.state?.plants?.map((plant) => (
+        {this.state.plants.filter(plant=> plant.name.toLowerCase().includes(this.state.search.toLowerCase())).map((plant) => (
           <div className="plant-card" key={plant.id}>
             <img className="plant-image" src={plant.img} alt={plant.name} />
             <div className="plant-details">
@@ -48,6 +62,7 @@ componentDidMount(){
           </div>
         ))}
       </main>
+      </React.Fragment>
     );
   }
 }

@@ -29,14 +29,42 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+in a class state is basically data that is dynamically changed, in order for you to build stateful class components it has to have some sort of data or state that is dynamic and can be manipulated by the user
+
 
 2. Describe the different phases of the component lifecycle.
+o	Mounting
+	Birth
+o	Updating
+	Growth
+o	Un-mounting
+	Death
+
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+Birth and Mounting Phase
+-	Constructor function is called and state data is initialized
+-	We can receive props and place them on our component as state
+-	Render is then invoked and our JSX elements are transformed into DOM elements
+-	After render is called, componentDidMount will be invoked
+GROWTH/UPDATING
+-	Any new props received from a parent, will trigger updates to the child
+-	This.setState(not directly part of the lifecycle but influences it) – any changes to our state need to go through setState
+-	setState calls a render by default
+-	componentDidUpdate()
+DEATH/UN-MOUNTING
+-	componentWillUnmount()
+o	destroy event listeners with componentWillUnmount()
+
 4. Define stateful logic.
+stateful logic is code that uses state or has to deal with state
 
 5. Describe how to test a React component with React Testing Library.
+render the component
+target the specific part of the component
+fill out input or any other event that you could do in that component
+then assert the information
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -73,8 +101,8 @@ _Please follow the setup instructions closely so that you can get everything up 
 
 **Starting your test runner**
 
-- [ ] In the final terminal window, make sure you are in the `client` folder still
-- [ ] Start the test runner with `npm test` (I recommend doing this only when you're testing - any change in your app will make the tests run, and that could eat up your computer power)
+- [x] In the final terminal window, make sure you are in the `client` folder still
+- [x] Start the test runner with `npm test` (I recommend doing this only when you're testing - any change in your app will make the tests run, and that could eat up your computer power)
 
 **Commit and Push OFTEN!**
 
@@ -107,8 +135,8 @@ _Note: You built a useForm hook in the guided project this week. You will probab
 
 #### Testing the Checkout Form
 
-- [ ] Build out the tests listed in `CheckoutForm.test.js`. You will need to make sure they are testing what the test title implies they are testing
-- [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working
+- [x] Build out the tests listed in `CheckoutForm.test.js`. You will need to make sure they are testing what the test title implies they are testing
+- [x] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working
 
 <hr/>
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
